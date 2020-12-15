@@ -10,9 +10,14 @@ import java.util.List;
 @RestController
 public class Searcher {
 
+    private String url = "https://panoramafirm.pl/szukaj?k=";
+
     @RequestMapping(value="/field", method = RequestMethod.GET)
     public List<Result> getResults(String searchedField) {
 
         List<Result> results = new ArrayList<>();
+
+
+
     }
 }
