@@ -11,5 +11,6 @@ To use please:
 
 Use cases :
 a) Typing "http://localhost:8080/field/hydraulik" will return "hydraulik" results
+
 b) Typing "http://localhost:8080/field/spawacz" will return "spawacz" results
 
