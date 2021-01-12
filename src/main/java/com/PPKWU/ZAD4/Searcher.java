@@ -30,8 +30,9 @@ public class Searcher {
                 Result result = new Result();
                 result.setName(element.dataset().get("name"));
                 result.setEmail(element.dataset().get("email"));
-                result.setAddress(element.dataset().get("name"));
-                result.setName(element.dataset().get("name"));
+                result.setAddress(element.dataset().get("address"));
+                result.setWebsite(element.dataset().get("url"));
+                result.setPhone(element.dataset().get("telephone"));
             }
         }
 
