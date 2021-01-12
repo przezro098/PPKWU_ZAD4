@@ -41,6 +41,20 @@ public class Searcher {
             }
         }
 
+        File vCardFile = new File("vCardCompanies.vcf");
+        FileWriter fw = new FileWriter(vCardFile.getAbsoluteFile());
+        BufferedWriter bw = new BufferedWriter(fw);
+
+        bw.write("BEGIN:VCARD\r\n");
+        bw.write("VERSION:4.0\r\n");
+        bw.write("ORG:" + results.get(Integer.getInteger(number)).getName() + "\r\n");
+        bw.write("EMAIL:" + results.get(Integer.getInteger(number)).getEmail() + "\r\n");
+        bw.write("TEL:" + results.get(Integer.getInteger(number)).getPhone() + "\r\n");
+        bw.write("URL:" + results.get(Integer.getInteger(number)).getWebsite() + "\r\n");
+        bw.write("ADR:" + results.get(Integer.getInteger(number)).getAddress() + "\r\n");
+        bw.write("END:VCARD");
+        bw.close();
+
 
 
 
