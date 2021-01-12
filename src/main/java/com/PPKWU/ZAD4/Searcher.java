@@ -6,8 +6,12 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +22,7 @@ public class Searcher {
     private String url = "https://panoramafirm.pl/szukaj?k=";
 
     @RequestMapping(value="/field", method = RequestMethod.GET)
-    public List<Result> getResults(String searchedField) throws IOException {
+    public String getResults(@RequestParam("name") String searchedField, @RequestParam("no") String number) throws IOException {
 
         List<Result> results = new ArrayList<>();
         Document document = Jsoup.connect(url+searchedField+"&l=").get();
@@ -33,8 +37,13 @@ public class Searcher {
                 result.setAddress(element.dataset().get("address"));
                 result.setWebsite(element.dataset().get("url"));
                 result.setPhone(element.dataset().get("telephone"));
+                results.add(result);
             }
         }
+
+
+
+
 
 
     }
